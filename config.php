@@ -63,7 +63,7 @@ if(isset($_GET['delete_id'])){
 if (isset($_GET['edit_id'])){
 	$editId = $_GET['edit_id'];
 
-	$infos = editData($editId,$conn);
+	$infos = displayEdit($editId,$conn);
 
 	foreach ($infos as $info){
 		$username = $info['username'];
@@ -117,18 +117,18 @@ function insertData($assocArr, $conn){
 
 function destroyData($var, $conn){
 
-	$destroy_sql = $conn->query("DELETE FROM users WHERE id='$var'");
-	$destroy_sql->execute();
+	$destroy_sql = $conn->prepare("DELETE FROM users WHERE id=?");
+	$destroy_sql->execute([$var]);
 
 	echo "<script language=javascript>
 		 alert('Registration has been Deleted');
 		 window.location='view.php';</script>";
 }
 
-function editData($editId, $conn){
+function displayEdit($editId, $conn){
 
-	$sql = $conn->prepare("SELECT * FROM users WHERE id ='$editId'");
-	$sql->execute();
+	$sql = $conn->prepare("SELECT * FROM users WHERE id = ?");
+	$sql->execute([$editId]);
 	$user_infos = $sql->fetchAll();
 	
 	return $user_infos;
