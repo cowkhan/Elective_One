@@ -1,6 +1,6 @@
 <?php 
 	include "header.php";
-	require "config.php";
+	require "register-controller.php";
 ?>
 <div class="col-md-8 col-md-offset-2">
 
@@ -38,7 +38,7 @@
 						    <div class="modal-dialog">
 						    
 						      <!-- Modal content-->
-						      <div class="modal-content">
+						      <div class="modal-content fontColorBlack">
 						        <div class="modal-header">
 						          <button type="button" class="close" data-dismiss="modal">&times;</button>
 						          <h4 class="modal-title">Modal Header of <?php echo $id ?></h4>

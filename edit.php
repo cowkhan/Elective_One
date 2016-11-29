@@ -1,5 +1,5 @@
 <?php  include "header.php";
-	require "config.php";
+	require "register-controller.php";
 ?>
 
 <center>

@@ -1,7 +1,7 @@
 <?php include "header.php";?>
 
 	<div class="col-md-4 col-md-offset-4">
-		<form class="form-horizontal" action="config.php" method="POST">
+		<form class="form-horizontal" action="register-controller.php" method="POST">
 			
 			<h1>Register</h1>
 			<hr>
