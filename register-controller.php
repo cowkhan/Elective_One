@@ -32,6 +32,10 @@ function destroyData($var, $conn){
 	echo "<script language=javascript>
 		 alert('Registration has been Deleted');
 		 window.location='view.php';</script>";
+
+
+
+	return header("Location:view.php");
 }
 
 function displayEdit($editId, $conn){
